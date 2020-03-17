@@ -1,3 +1,15 @@
+/* eslint-disable react/jsx-filename-extension */
+/**
+ * ************************************
+ *
+ * @module  index.js
+ * @author Timothy Mai
+ * @date 3/16/20
+ * @description renders application
+ *
+ * ************************************
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
