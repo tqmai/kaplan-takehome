@@ -12,7 +12,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Book from './components/Book';
+import FilterableBookList from './components/FilterableBookList';
 
 function App() {
   return (
@@ -34,7 +34,8 @@ function App() {
     // </div>
 
     <div>
-      <Book title="swag book" author="Tim" publisher="swag corps" publishedDate="2020" />
+      {/* <Book title="swag book" author="Tim" publisher="swag corps" publishedDate="2020" /> */}
+      <FilterableBookList />
     </div>
   );
 }
