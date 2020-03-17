@@ -10,13 +10,26 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
+import Book from './Book';
 
-function FilterableBookList() {
+function FilterableBookList({ books }) {
+  const formattedBooks = books.map(({
+    title,
+    author,
+    publisher,
+    publishedDate,
+  }) => <Book title={title} author={author} publisher={publisher} publishedDate={publishedDate} />);
+
   return (
     <div>
-      filterable book list
+      {formattedBooks}
     </div>
   );
 }
+
+FilterableBookList.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+};
 
 export default FilterableBookList;

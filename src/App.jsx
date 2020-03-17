@@ -10,32 +10,29 @@
  */
 
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
 import FilterableBookList from './components/FilterableBookList';
 
 function App() {
-  return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+  const books = [
+    {
+      title: 'swag book',
+      author: 'Tim',
+      publisher: 'swag corps',
+      publishedDate: '2020',
+    },
+    {
+      title: 'psych rocks',
+      author: 'Kelci',
+      publisher: 'psych corps',
+      publishedDate: '2019',
+    },
+  ];
 
+  return (
     <div>
-      {/* <Book title="swag book" author="Tim" publisher="swag corps" publishedDate="2020" /> */}
-      <FilterableBookList />
+      <FilterableBookList books={books} />
     </div>
   );
 }
