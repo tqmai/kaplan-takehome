@@ -34,7 +34,7 @@ function App() {
     // </div>
 
     <div>
-      <Book />
+      <Book title="swag book" author="Tim" publisher="swag corps" publishedDate="2020" />
     </div>
   );
 }
