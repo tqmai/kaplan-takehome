@@ -12,27 +12,12 @@
 import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import FilterableBookList from './components/FilterableBookList';
+import MainContainer from './containers/MainContainer';
 
 function App() {
-  const books = [
-    {
-      title: 'swag book',
-      author: 'Tim',
-      publisher: 'swag corps',
-      publishedDate: '2020',
-    },
-    {
-      title: 'psych rocks',
-      author: 'Kelci',
-      publisher: 'psych corps',
-      publishedDate: '2019',
-    },
-  ];
-
   return (
     <div>
-      <FilterableBookList books={books} />
+      <MainContainer />
     </div>
   );
 }
