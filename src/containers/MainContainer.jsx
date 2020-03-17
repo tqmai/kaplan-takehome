@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import FilterableBookList from '../components/FilterableBookList';
 
 function MainContainer() {
   const books = [
@@ -29,7 +30,12 @@ function MainContainer() {
 
   return (
     <div>
-      main container
+      <h1>Books</h1>
+      <button type="button">Create New Book</button>
+      <p>placeholder for search bar</p>
+      <h2>All Books</h2>
+      {/* update this h2 later when adding search bar */}
+      <FilterableBookList books={books} />
     </div>
   );
 }
