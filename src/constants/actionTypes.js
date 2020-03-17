@@ -4,7 +4,7 @@
  * @module  actionTypes.js
  * @author Timothy Mai
  * @date 3/17/20
- * @description action type constants
+ * @description action type constants (valid actions for Redux)
  *
  * ************************************
  */
