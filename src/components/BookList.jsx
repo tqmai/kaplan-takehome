@@ -13,7 +13,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book';
 
-function FilterableBookList({ books }) {
+function BookList({ books }) {
   const formattedBooks = books.map(({
     title,
     author,
@@ -28,8 +28,8 @@ function FilterableBookList({ books }) {
   );
 }
 
-FilterableBookList.propTypes = {
+BookList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
 };
 
-export default FilterableBookList;
+export default BookList;
