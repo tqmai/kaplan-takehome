@@ -1,5 +1,5 @@
 Notes:
-Even though the action creators are not all directly related, I opted to use only a single reducer because this is a smaller app.
+Though the app is small, I opted to separate the functionality of the app into separate reducers to more clearly separate concerns.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
