@@ -18,5 +18,4 @@ const reducers = combineReducers({
   searchReducer,
 });
 
-
 export default reducers;
