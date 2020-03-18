@@ -11,7 +11,7 @@
 
 import * as types from '../constants/actionTypes';
 
-// remove extra data from initialState after adding fetch functionality
+// note: remove extra data from initialState after adding fetch functionality
 const initialState = {
   books: [
     {
@@ -30,9 +30,9 @@ const initialState = {
   searchQuery: '',
 };
 
-// update FETCH_BOOKS to have fetch functionality
 function reducer(state = initialState, action) {
   switch (action.type) {
+    // note: update FETCH_BOOKS to have fetch functionality
     case types.FETCH_BOOKS:
       return state;
     case types.ADD_BOOKS:
