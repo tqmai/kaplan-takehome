@@ -14,8 +14,8 @@ import booksReducer from './booksReducer';
 import searchReducer from './searchReducer';
 
 const reducers = combineReducers({
-  booksReducer,
-  searchReducer,
+  books: booksReducer,
+  searchQuery: searchReducer,
 });
 
 export default reducers;
