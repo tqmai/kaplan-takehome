@@ -11,17 +11,7 @@
 
 import * as types from '../constants/actionTypes';
 
-/*
-// fetch book data
-export const FETCH_BOOKS = 'FETCH_BOOKS';
-
-// add new book data
-export const ADD_BOOKS = 'ADD_BOOKS';
-
-// edit search query
-export const EDIT_SEARCH_QUERY = 'EDIT_SEARCH_QUERY';
-*/
-
+// remove extra data from initialState after adding fetch functionality
 const initialState = {
   books: [
     {
@@ -40,6 +30,7 @@ const initialState = {
   searchQuery: '',
 };
 
+// update FETCH_BOOKS to have fetch functionality
 function reducer(state = initialState, action) {
   switch (action.type) {
     case types.FETCH_BOOKS:
@@ -53,7 +44,10 @@ function reducer(state = initialState, action) {
         ],
       };
     case types.EDIT_SEARCH_QUERY:
-      return state;
+      return {
+        ...state,
+        searchQuery: action.payload,
+      };
     default:
       return state;
   }
