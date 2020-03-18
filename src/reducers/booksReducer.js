@@ -14,7 +14,7 @@ import { FETCH_BOOKS, ADD_BOOKS } from '../constants/actionTypes';
 // note: remove extra data from initialState after adding fetch functionality
 const booksArray = [
   {
-    title: 'swag book',
+    title: 'swag book!!!',
     author: 'Tim',
     publisher: 'swag corps',
     publishedDate: '2020',

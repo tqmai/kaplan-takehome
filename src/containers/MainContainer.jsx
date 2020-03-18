@@ -12,6 +12,7 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
 import BookList from '../components/BookList';
+import FilterableBookList from './FilterableBookList';
 
 function MainContainer() {
   const books = [
@@ -36,7 +37,7 @@ function MainContainer() {
       <SearchBar />
       <h2>All Books</h2>
       {/* update this h2 later when adding search bar */}
-      <BookList books={books} />
+      <FilterableBookList books={books} />
     </div>
   );
 }
