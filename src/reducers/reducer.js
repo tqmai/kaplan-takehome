@@ -45,7 +45,13 @@ function reducer(state = initialState, action) {
     case types.FETCH_BOOKS:
       return state;
     case types.ADD_BOOKS:
-      return state;
+      return {
+        ...state,
+        todos: [
+          ...state.todos,
+          action.payload,
+        ],
+      };
     case types.EDIT_SEARCH_QUERY:
       return state;
     default:
