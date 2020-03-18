@@ -1,10 +1,10 @@
 /**
  * ************************************
  *
- * @module  FilterableBookList.jsx
+ * @module  BookList.jsx
  * @author Timothy Mai
  * @date 3/16/20
- * @description filterable display for books
+ * @description display for books
  *
  * ************************************
  */
