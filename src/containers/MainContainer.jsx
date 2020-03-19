@@ -12,7 +12,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { editSearchQuery } from '../actions/actionCreators';
+import * as actions from '../actions/actionCreators';
 import SearchBar from '../components/SearchBar';
 import FilterableBookList from './FilterableBookList';
 
@@ -24,7 +24,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    editSearchQuery: (event) => dispatch(editSearchQuery(event.target.value)),
+    editSearchQuery: (event) => dispatch(actions.editSearchQuery(event.target.value)),
   };
 }
 
