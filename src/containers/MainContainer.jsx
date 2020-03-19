@@ -12,6 +12,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import * as actions from '../actions/actionCreators';
 import SearchBar from '../components/SearchBar';
 import FilterableBookList from './FilterableBookList';
@@ -32,7 +33,11 @@ function MainContainer({ searchQuery, editSearchQuery }) {
   return (
     <div>
       <h1>Books</h1>
-      <button type="button">Create New Book</button>
+      <button type="button">
+        <Link to="/create">
+          Create New Book
+        </Link>
+      </button>
       <SearchBar searchQuery={searchQuery} editSearchQuery={editSearchQuery} />
       {/* the h2 changes based on whether or not there is a search query */}
       {!searchQuery ? <h2>All Books</h2> : <h2>Search Results</h2>}
