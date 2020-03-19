@@ -10,15 +10,21 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function SearchBar() {
+function SearchBar({ searchQuery, editSearchQuery }) {
   return (
     <div>
       <form>
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" value={searchQuery} onChange={editSearchQuery} />
       </form>
     </div>
   );
 }
+
+SearchBar.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
+  editSearchQuery: PropTypes.func.isRequired,
+};
 
 export default SearchBar;
