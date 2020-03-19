@@ -12,9 +12,26 @@
 import { connect } from 'react-redux';
 import BookList from '../components/BookList';
 
+// functionality for filtering books based on search query
 function getVisibleBooks(books, searchQuery) {
-  // add logic here to filter the books
-  return books;
+  // if the title, author, or publisher contains the query, display that book
+  function searchFilter({ title, author, publisher }) {
+    // make all the strings lowercase to allow for case insensitivity
+    const lowercaseQuery = searchQuery.toLowerCase();
+    const lowercaseTitle = title.toLowerCase();
+    const lowercaseAuthor = author.toLowerCase();
+    const lowercasePublisher = publisher.toLowerCase();
+
+    return (
+      lowercaseTitle.includes(lowercaseQuery)
+      || lowercaseAuthor.includes(lowercaseQuery)
+      || lowercasePublisher.includes(lowercaseQuery)
+    );
+  }
+
+  const validBooks = books.filter(searchFilter);
+
+  return validBooks;
 }
 
 function mapStateToProps(state) {
