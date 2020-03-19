@@ -2,7 +2,7 @@
 /**
  * ************************************
  *
- * @module  CreateBookContainer.jsx
+ * @module  CreateBookForm.jsx
  * @author Timothy Mai
  * @date 3/16/20
  * @description container for "create new book" page
@@ -12,7 +12,7 @@
 
 import React from 'react';
 
-function CreateBookContainer() {
+function CreateBookForm() {
   return (
     <div>
       <h1>Create New Book</h1>
@@ -44,4 +44,4 @@ function CreateBookContainer() {
   );
 }
 
-export default CreateBookContainer;
+export default CreateBookForm;
