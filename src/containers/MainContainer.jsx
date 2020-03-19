@@ -28,7 +28,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function MainContainer({ searchQuery }) {
+function MainContainer({ searchQuery, editSearchQuery }) {
   return (
     <div>
       <h1>Books</h1>
@@ -43,6 +43,7 @@ function MainContainer({ searchQuery }) {
 
 MainContainer.propTypes = {
   searchQuery: PropTypes.string.isRequired,
+  editSearchQuery: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
