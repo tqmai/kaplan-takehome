@@ -13,13 +13,13 @@ import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
 import MainContainer from './containers/MainContainer';
-import CreateBookContainer from './containers/CreateBookContainer';
+import CreateBookForm from './containers/CreateBookForm';
 
 function App() {
   return (
     <div>
-      <MainContainer />
-      {/* <CreateBookContainer /> */}
+      {/* <MainContainer /> */}
+      <CreateBookForm />
     </div>
   );
 }

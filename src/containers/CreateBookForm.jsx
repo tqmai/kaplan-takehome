@@ -11,13 +11,35 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import * as types from '../actions/actionCreators';
 
-function CreateBookForm() {
+function mapDispatchToProps(dispatch) {
+  return {
+    addBooks: () => dispatch(types.addBooks()),
+  };
+}
+
+function CreateBookForm({ dispatch }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newBook = {
+      title: 'new book',
+      author: 'new author',
+      publisher: 'new publisher',
+      publishedDate: 'new date',
+    };
+
+    dispatch(types.addBooks(newBook));
+  };
+
   return (
     <div>
       <h1>Create New Book</h1>
       <button type="button">Back</button>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Title:
           <input name="title" type="text" />
@@ -44,4 +66,8 @@ function CreateBookForm() {
   );
 }
 
-export default CreateBookForm;
+CreateBookForm.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+export default connect()(CreateBookForm);
