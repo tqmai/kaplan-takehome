@@ -10,36 +10,32 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import SearchBar from '../components/SearchBar';
-import BookList from '../components/BookList';
 import FilterableBookList from './FilterableBookList';
 
-function MainContainer() {
-  const books = [
-    {
-      title: 'swag book',
-      author: 'Tim',
-      publisher: 'swag corps',
-      publishedDate: '2020',
-    },
-    {
-      title: 'psych rocks',
-      author: 'Kelci',
-      publisher: 'psych corps',
-      publishedDate: '2019',
-    },
-  ];
+function mapStateToProps(state) {
+  return {
+    searchQuery: state.searchQuery,
+  };
+}
 
+function MainContainer({ searchQuery }) {
   return (
     <div>
       <h1>Books</h1>
       <button type="button">Create New Book</button>
       <SearchBar />
-      <h2>All Books</h2>
-      {/* update this h2 later when adding search bar */}
-      <FilterableBookList books={books} />
+      {/* the h2 changes based on whether or not there is a search query */}
+      {!searchQuery ? <h2>All Books</h2> : <h2>Search Results</h2>}
+      <FilterableBookList />
     </div>
   );
 }
 
-export default MainContainer;
+MainContainer.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
+};
+
+export default connect(mapStateToProps, null)(MainContainer);
