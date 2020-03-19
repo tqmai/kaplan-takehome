@@ -12,15 +12,26 @@
 import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import MainContainer from './containers/MainContainer';
 import CreateBookForm from './containers/CreateBookForm';
 
 function App() {
   return (
-    <div>
-      {/* <MainContainer /> */}
-      <CreateBookForm />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/create">
+          <CreateBookForm />
+        </Route>
+        <Route path="/">
+          <MainContainer />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
