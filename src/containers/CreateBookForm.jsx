@@ -15,21 +15,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as types from '../actions/actionCreators';
 
-function mapDispatchToProps(dispatch) {
-  return {
-    addBooks: () => dispatch(types.addBooks()),
-  };
-}
-
 function CreateBookForm({ dispatch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newBook = {
-      title: 'new book',
-      author: 'new author',
-      publisher: 'new publisher',
-      publishedDate: 'new date',
+      title: e.target.title.value,
+      author: e.target.author.value,
+      publisher: e.target.publisher.value,
+      publishedDate: e.target.publishedDate.value,
     };
 
     dispatch(types.addBooks(newBook));
