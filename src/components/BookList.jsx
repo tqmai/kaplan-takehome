@@ -19,7 +19,16 @@ function BookList({ books }) {
     author,
     publisher,
     publishedDate,
-  }) => <Book title={title} author={author} publisher={publisher} publishedDate={publishedDate} />);
+    id,
+  }) => (
+    <Book
+      title={title}
+      author={author}
+      publisher={publisher}
+      publishedDate={publishedDate}
+      key={id}
+    />
+  ));
 
   return (
     <div>
@@ -29,7 +38,7 @@ function BookList({ books }) {
 }
 
 BookList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default BookList;

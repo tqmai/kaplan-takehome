@@ -18,12 +18,14 @@ const booksArray = [
     author: 'Tim',
     publisher: 'swag corps',
     publishedDate: '2020',
+    id: 1,
   },
   {
     title: 'psych rocks',
     author: 'Kelci',
     publisher: 'psych corps',
     publishedDate: '2019',
+    id: 2,
   },
 ];
 

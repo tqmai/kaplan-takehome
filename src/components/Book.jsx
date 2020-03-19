@@ -22,17 +22,17 @@ function Book({
     <div>
       <h4>{title}</h4>
       <ul>
-        <li>
+        <li key="author">
           Author:
           {' '}
           {author}
         </li>
-        <li>
+        <li key="publisher">
           Publisher:
           {' '}
           {publisher}
         </li>
-        <li>
+        <li key="publishedDate">
           Published Date:
           {' '}
           {publishedDate}
