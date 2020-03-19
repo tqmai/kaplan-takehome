@@ -64,4 +64,7 @@ CreateBookForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
+// because I'm calling connect without arguments,
+// this component will not re-render with state changes
+// might cause problems later - check on this later
 export default connect()(CreateBookForm);
