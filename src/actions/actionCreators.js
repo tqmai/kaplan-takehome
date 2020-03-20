@@ -10,7 +10,6 @@
  */
 
 import * as types from '../constants/actionTypes';
-import { func } from 'prop-types';
 
 export function fetchBooks(data) {
   // return {
