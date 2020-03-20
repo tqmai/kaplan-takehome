@@ -29,17 +29,28 @@ const booksArray = [
   },
 ];
 
+// variable to keep track of IDs for added books
+let nextId = 0;
+
 // you could actually just make booksArray be an empty array after you remove the extra data
 function booksReducer(state = booksArray, action) {
   switch (action.type) {
     // note: update FETCH_BOOKS to have fetch functionality
     case FETCH_BOOKS:
       return state;
-    case ADD_BOOKS:
+    case ADD_BOOKS: {
+      const newBookWithId = {
+        ...action.payload,
+        id: nextId,
+      };
+
+      nextId += 1;
+
       return [
         ...state,
-        action.payload,
+        newBookWithId,
       ];
+    }
     default:
       return state;
   }
