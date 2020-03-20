@@ -19,12 +19,18 @@ function getVisibleBooks(books, searchQuery) {
     // make all the strings lowercase to allow for case insensitivity
     const lowercaseQuery = searchQuery.toLowerCase();
     const lowercaseTitle = title.toLowerCase();
-    const lowercaseAuthor = author.toLowerCase();
+    const lowercaseAuthorArr = author.map((auth) => auth.toLowerCase());
     const lowercasePublisher = publisher.toLowerCase();
 
+    // check to see if author contains the search query
+    // eslint-disable-next-line arrow-body-style
+    const authorContainsQuery = lowercaseAuthorArr.reduce((acc, curAuthor) => {
+      return curAuthor.includes(lowercaseQuery);
+    }, false);
+
     return (
-      lowercaseTitle.includes(lowercaseQuery)
-      || lowercaseAuthor.includes(lowercaseQuery)
+      authorContainsQuery
+      || lowercaseTitle.includes(lowercaseQuery)
       || lowercasePublisher.includes(lowercaseQuery)
     );
   }
