@@ -22,7 +22,6 @@ export function requestBooks() {
 export function receiveBooks(bookData) {
   return {
     type: types.RECEIVE_BOOKS,
-    // payload will need to be modified to get the right data - will get full unfiltered json data
     payload: bookData,
   };
 }
