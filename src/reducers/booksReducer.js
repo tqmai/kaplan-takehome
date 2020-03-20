@@ -19,22 +19,8 @@ import {
 // note: remove extra data from initialState after adding fetch functionality
 const initialState = {
   isFetching: false,
-  books: [
-    {
-      title: 'swag book!!!',
-      author: 'Tim',
-      publisher: 'swag corps',
-      publishedDate: '2020',
-      id: 1,
-    },
-    {
-      title: 'psych rocks',
-      author: 'Kelci',
-      publisher: 'psych corps',
-      publishedDate: '2019',
-      id: 2,
-    },
-  ],
+  booksFetched: false,
+  books: [],
 };
 
 // variable to keep track of IDs for added books
@@ -66,11 +52,10 @@ function booksReducer(state = initialState, action) {
         return formattedBook;
       });
 
-      console.log(formattedBooks);
-
       return {
         ...state,
         isFetching: false,
+        booksFetched: true,
         books: [
           ...state.books,
           ...formattedBooks,
