@@ -9,7 +9,7 @@
  * ************************************
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -26,10 +26,15 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     editSearchQuery: (event) => dispatch(actions.editSearchQuery(event.target.value)),
+    fetchBooks: () => dispatch(actions.fetchBooks()),
   };
 }
 
-function MainContainer({ searchQuery, editSearchQuery }) {
+function MainContainer({ searchQuery, editSearchQuery, fetchBooks }) {
+  useEffect(() => {
+    fetchBooks();
+  });
+
   return (
     <div>
       <h1>Books</h1>
@@ -49,6 +54,7 @@ function MainContainer({ searchQuery, editSearchQuery }) {
 MainContainer.propTypes = {
   searchQuery: PropTypes.string.isRequired,
   editSearchQuery: PropTypes.func.isRequired,
+  fetchBooks: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
