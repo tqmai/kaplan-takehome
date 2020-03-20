@@ -9,7 +9,12 @@
  * ************************************
  */
 
-import { FETCH_BOOKS, ADD_BOOKS } from '../constants/actionTypes';
+import {
+  FETCH_BOOKS,
+  REQUEST_BOOKS,
+  RECEIVE_BOOKS,
+  ADD_BOOKS,
+} from '../constants/actionTypes';
 
 // note: remove extra data from initialState after adding fetch functionality
 const initialState = {
@@ -37,9 +42,27 @@ let nextId = 0;
 
 function booksReducer(state = initialState, action) {
   switch (action.type) {
-    // note: update FETCH_BOOKS to have fetch functionality
+    // note: update FETCH_BOOKS, REQUEST_BOOKS, RECEIVE_BOOKS to have fetch functionality
     case FETCH_BOOKS:
       return state;
+    case REQUEST_BOOKS:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case RECEIVE_BOOKS: {
+      // add logic to parse through payload before adding the data to state
+      const formattedBooks = ['swag'];
+
+      return {
+        ...state,
+        isFetching: false,
+        books: [
+          ...state.books,
+          ...formattedBooks,
+        ],
+      };
+    }
     case ADD_BOOKS: {
       // take the new book info and pass an id to it before adding it to the store
       const newBookWithId = {
@@ -48,11 +71,6 @@ function booksReducer(state = initialState, action) {
       };
 
       nextId += 1;
-
-      // return [
-      //   ...state,
-      //   newBookWithId,
-      // ];
 
       return {
         ...state,
