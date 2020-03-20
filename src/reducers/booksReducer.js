@@ -12,28 +12,30 @@
 import { FETCH_BOOKS, ADD_BOOKS } from '../constants/actionTypes';
 
 // note: remove extra data from initialState after adding fetch functionality
-const booksArray = [
-  {
-    title: 'swag book!!!',
-    author: 'Tim',
-    publisher: 'swag corps',
-    publishedDate: '2020',
-    id: 1,
-  },
-  {
-    title: 'psych rocks',
-    author: 'Kelci',
-    publisher: 'psych corps',
-    publishedDate: '2019',
-    id: 2,
-  },
-];
+const initialState = {
+  isFetching: false,
+  books: [
+    {
+      title: 'swag book!!!',
+      author: 'Tim',
+      publisher: 'swag corps',
+      publishedDate: '2020',
+      id: 1,
+    },
+    {
+      title: 'psych rocks',
+      author: 'Kelci',
+      publisher: 'psych corps',
+      publishedDate: '2019',
+      id: 2,
+    },
+  ],
+};
 
 // variable to keep track of IDs for added books
 let nextId = 0;
 
-// you could actually just make booksArray be an empty array after you remove the extra data
-function booksReducer(state = booksArray, action) {
+function booksReducer(state = initialState, action) {
   switch (action.type) {
     // note: update FETCH_BOOKS to have fetch functionality
     case FETCH_BOOKS:
@@ -47,10 +49,18 @@ function booksReducer(state = booksArray, action) {
 
       nextId += 1;
 
-      return [
+      // return [
+      //   ...state,
+      //   newBookWithId,
+      // ];
+
+      return {
         ...state,
-        newBookWithId,
-      ];
+        books: [
+          ...state.books,
+          newBookWithId,
+        ],
+      };
     }
     default:
       return state;

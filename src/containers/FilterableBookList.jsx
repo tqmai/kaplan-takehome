@@ -36,7 +36,7 @@ function getVisibleBooks(books, searchQuery) {
 
 function mapStateToProps(state) {
   return {
-    books: getVisibleBooks(state.books, state.searchQuery),
+    books: getVisibleBooks(state.books.books, state.searchQuery),
   };
 }
 
