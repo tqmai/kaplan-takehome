@@ -20,6 +20,7 @@ import FilterableBookList from './FilterableBookList';
 function mapStateToProps(state) {
   return {
     searchQuery: state.searchQuery,
+    booksFetched: state.books.booksFetched,
   };
 }
 
@@ -30,9 +31,11 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function MainContainer({ searchQuery, editSearchQuery, fetchBooks }) {
+function MainContainer({ searchQuery, booksFetched, editSearchQuery, fetchBooks }) {
   useEffect(() => {
-    fetchBooks();
+    if (!booksFetched) {
+      fetchBooks();
+    }
   });
 
   return (
@@ -53,6 +56,7 @@ function MainContainer({ searchQuery, editSearchQuery, fetchBooks }) {
 
 MainContainer.propTypes = {
   searchQuery: PropTypes.string.isRequired,
+  booksFetched: PropTypes.bool.isRequired,
   editSearchQuery: PropTypes.func.isRequired,
   fetchBooks: PropTypes.func.isRequired,
 };
