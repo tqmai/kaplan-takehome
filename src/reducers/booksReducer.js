@@ -52,14 +52,16 @@ function booksReducer(state = initialState, action) {
       };
     case RECEIVE_BOOKS: {
       // add logic to parse through payload before adding the data to state
-      const formattedBooks = ['swag'];
+      const formattedBooks = action.payload;
+
+      console.log(formattedBooks);
 
       return {
         ...state,
         isFetching: false,
         books: [
           ...state.books,
-          ...formattedBooks,
+          // ...formattedBooks,
         ],
       };
     }

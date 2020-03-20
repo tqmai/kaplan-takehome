@@ -35,12 +35,7 @@ export function fetchBooks() {
         (response) => response.json(),
         (error) => console.log('error occured', error),
       )
-      .then((json) => {
-        // check if this works
-        console.log(json);
-
-        dispatch(receiveBooks(json));
-      });
+      .then((json) => dispatch(receiveBooks(json)));
   };
 }
 
