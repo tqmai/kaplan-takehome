@@ -10,13 +10,11 @@
  */
 
 import {
-  FETCH_BOOKS,
   REQUEST_BOOKS,
   RECEIVE_BOOKS,
   ADD_BOOKS,
 } from '../constants/actionTypes';
 
-// note: remove extra data from initialState after adding fetch functionality
 const initialState = {
   isFetching: false,
   booksFetched: false,
@@ -28,9 +26,6 @@ let nextId = 0;
 
 function booksReducer(state = initialState, action) {
   switch (action.type) {
-    // note: update FETCH_BOOKS, REQUEST_BOOKS, RECEIVE_BOOKS to have fetch functionality
-    case FETCH_BOOKS:
-      return state;
     case REQUEST_BOOKS:
       return {
         ...state,
