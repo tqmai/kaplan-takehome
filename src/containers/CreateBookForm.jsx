@@ -23,7 +23,7 @@ function CreateBookForm({ dispatch }) {
 
     const newBook = {
       title: e.target.title.value,
-      author: e.target.author.value,
+      author: [e.target.author.value],
       publisher: e.target.publisher.value,
       publishedDate: e.target.publishedDate.value,
     };
