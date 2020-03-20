@@ -39,6 +39,7 @@ function booksReducer(state = booksArray, action) {
     case FETCH_BOOKS:
       return state;
     case ADD_BOOKS: {
+      // take the new book info and pass an id to it before adding it to the store
       const newBookWithId = {
         ...action.payload,
         id: nextId,
