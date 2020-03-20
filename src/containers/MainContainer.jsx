@@ -31,7 +31,13 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function MainContainer({ searchQuery, booksFetched, editSearchQuery, fetchBooks }) {
+function MainContainer({
+  searchQuery,
+  booksFetched,
+  editSearchQuery,
+  fetchBooks,
+}) {
+  // fetches the books from the Google API only one time
   useEffect(() => {
     if (!booksFetched) {
       fetchBooks();
@@ -47,7 +53,6 @@ function MainContainer({ searchQuery, booksFetched, editSearchQuery, fetchBooks 
         </Link>
       </button>
       <SearchBar searchQuery={searchQuery} editSearchQuery={editSearchQuery} />
-      {/* the h2 changes based on whether or not there is a search query */}
       {!searchQuery ? <h2>All Books</h2> : <h2>Search Results</h2>}
       <FilterableBookList />
     </div>
