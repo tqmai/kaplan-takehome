@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /**
  * ************************************
@@ -12,6 +13,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as types from '../actions/actionCreators';
 
@@ -27,12 +29,18 @@ function CreateBookForm({ dispatch }) {
     };
 
     dispatch(types.addBooks(newBook));
+
+    alert('Book added!');
   };
 
   return (
     <div>
       <h1>Create New Book</h1>
-      <button type="button">Back</button>
+      <button type="button">
+        <Link to="/">
+          Back
+        </Link>
+      </button>
       <form onSubmit={handleSubmit}>
         <label>
           Title:
@@ -64,7 +72,4 @@ CreateBookForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-// because I'm calling connect without arguments,
-// this component will not re-render with state changes
-// might cause problems later - check on this later
 export default connect()(CreateBookForm);
