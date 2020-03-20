@@ -18,6 +18,9 @@ function Book({
   publisher,
   publishedDate,
 }) {
+  // author is an array - format into string
+  const formattedAuthors = author.join(', ');
+
   return (
     <div>
       <h4>{title}</h4>
@@ -25,7 +28,7 @@ function Book({
         <li key="author">
           Author:
           {' '}
-          {author}
+          {formattedAuthors}
         </li>
         <li key="publisher">
           Publisher:
@@ -44,7 +47,7 @@ function Book({
 
 Book.propTypes = {
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  author: PropTypes.arrayOf(PropTypes.string).isRequired,
   publisher: PropTypes.string.isRequired,
   publishedDate: PropTypes.string.isRequired,
 };
