@@ -46,7 +46,6 @@ function mapStateToProps(state) {
   };
 }
 
-// note: there is no mapDispatchToProps because BookList does not need to modify the state
 const FilterableBookList = connect(mapStateToProps, null)(BookList);
 
 export default FilterableBookList;
