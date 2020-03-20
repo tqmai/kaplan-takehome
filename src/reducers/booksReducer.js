@@ -32,7 +32,7 @@ function booksReducer(state = initialState, action) {
         isFetching: true,
       };
     case RECEIVE_BOOKS: {
-      // add logic to parse through payload before adding the data to state
+      // logic to parse through payload before adding the data to state
       const formattedBooks = action.payload.items.map(({ volumeInfo }) => {
         const formattedBook = {
           title: volumeInfo.title, // string
