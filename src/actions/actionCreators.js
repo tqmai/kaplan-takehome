@@ -10,11 +10,39 @@
  */
 
 import * as types from '../constants/actionTypes';
+import { func } from 'prop-types';
 
 export function fetchBooks(data) {
+  // return {
+  //   type: types.FETCH_BOOKS,
+  //   payload: data,
+  // };
+
+  return (dispatch) => {
+    return fetch('https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep')
+      .then(
+        (response) => response.json(),
+        (error) => console.log('error occured', error),
+      )
+      .then((json) => {
+        // add more logic here after determining that fetch works
+        console.log(json);
+      });
+  };
+}
+
+export function requestBooks() {
   return {
-    type: types.FETCH_BOOKS,
-    payload: data,
+    type: types.REQUEST_BOOKS,
+    payload: null,
+  };
+}
+
+export function receiveBooks(bookData) {
+  return {
+    type: types.RECEIVE_BOOKS,
+    // payload will need to be modified to get the right data - will get full unfiltered json data
+    payload: bookData,
   };
 }
 

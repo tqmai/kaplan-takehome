@@ -9,11 +9,12 @@
  * ************************************
  */
 
-// fetch book data
 export const FETCH_BOOKS = 'FETCH_BOOKS';
 
-// add new book data
+export const REQUEST_BOOKS = 'REQUEST_BOOKS';
+
+export const RECEIVE_BOOKS = 'RECEIVE_BOOKS';
+
 export const ADD_BOOKS = 'ADD_BOOKS';
 
-// edit search query
 export const EDIT_SEARCH_QUERY = 'EDIT_SEARCH_QUERY';
