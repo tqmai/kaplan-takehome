@@ -11,25 +11,6 @@
 
 import * as types from '../constants/actionTypes';
 
-export function fetchBooks(data) {
-  // return {
-  //   type: types.FETCH_BOOKS,
-  //   payload: data,
-  // };
-
-  return (dispatch) => {
-    return fetch('https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep')
-      .then(
-        (response) => response.json(),
-        (error) => console.log('error occured', error),
-      )
-      .then((json) => {
-        // add more logic here after determining that fetch works
-        console.log(json);
-      });
-  };
-}
-
 export function requestBooks() {
   return {
     type: types.REQUEST_BOOKS,
@@ -42,6 +23,24 @@ export function receiveBooks(bookData) {
     type: types.RECEIVE_BOOKS,
     // payload will need to be modified to get the right data - will get full unfiltered json data
     payload: bookData,
+  };
+}
+
+export function fetchBooks() {
+  return (dispatch) => {
+    dispatch(requestBooks());
+
+    return fetch('https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep')
+      .then(
+        (response) => response.json(),
+        (error) => console.log('error occured', error),
+      )
+      .then((json) => {
+        // check if this works
+        console.log(json);
+
+        dispatch(receiveBooks(json));
+      });
   };
 }
 
