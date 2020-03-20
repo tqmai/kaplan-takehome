@@ -52,7 +52,19 @@ function booksReducer(state = initialState, action) {
       };
     case RECEIVE_BOOKS: {
       // add logic to parse through payload before adding the data to state
-      const formattedBooks = action.payload;
+      const formattedBooks = action.payload.items.map(({ volumeInfo }) => {
+        const formattedBook = {
+          title: volumeInfo.title, // string
+          author: volumeInfo.authors, // array
+          publisher: volumeInfo.publisher ? volumeInfo.publisher : 'n/a', // string - if no publisher, return n/a
+          publishedDate: volumeInfo.publishedDate, // string
+          id: nextId,
+        };
+
+        nextId += 1;
+
+        return formattedBook;
+      });
 
       console.log(formattedBooks);
 
@@ -61,7 +73,7 @@ function booksReducer(state = initialState, action) {
         isFetching: false,
         books: [
           ...state.books,
-          // ...formattedBooks,
+          ...formattedBooks,
         ],
       };
     }
