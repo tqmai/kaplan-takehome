@@ -11,6 +11,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../stylesheets/BookList.scss';
 import Book from './Book';
 
 function BookList({ books }) {
