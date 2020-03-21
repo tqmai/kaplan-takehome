@@ -48,11 +48,11 @@ function MainContainer({
     <div>
       <header>
         <h1>Books</h1>
-        <button type="button">
-          <Link to="/create">
+        <Link to="/create">
+          <button type="button">
             Create New Book
-          </Link>
-        </button>
+          </button>
+        </Link>
         <SearchBar searchQuery={searchQuery} editSearchQuery={editSearchQuery} />
       </header>
       <main>
