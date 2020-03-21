@@ -11,6 +11,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../stylesheets/Book.scss';
 
 function Book({
   title,
@@ -22,7 +23,7 @@ function Book({
   const formattedAuthors = author.join(', ');
 
   return (
-    <div>
+    <section className="book">
       <h4>{title}</h4>
       <ul>
         <li key="author">
@@ -41,7 +42,7 @@ function Book({
           {publishedDate}
         </li>
       </ul>
-    </div>
+    </section>
   );
 }
 
