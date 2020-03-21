@@ -32,7 +32,7 @@ function BookList({ books }) {
   ));
 
   return (
-    <section>
+    <section className="bookList">
       {formattedBooks}
     </section>
   );
