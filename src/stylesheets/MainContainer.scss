@@ -1,0 +1,16 @@
+.app {
+  margin: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__button {
+  background-color: #303F9F;
+  color: #F5F5F5;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}

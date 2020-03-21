@@ -13,6 +13,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../stylesheets/MainContainer.scss';
 import * as actions from '../actions/actionCreators';
 import SearchBar from '../components/SearchBar';
 import FilterableBookList from './FilterableBookList';
@@ -45,11 +46,11 @@ function MainContainer({
   });
 
   return (
-    <div>
+    <div className="app">
       <header className="header">
         <h1>Books</h1>
         <Link to="/create">
-          <button type="button">
+          <button type="button" className="header__button">
             Create New Book
           </button>
         </Link>
