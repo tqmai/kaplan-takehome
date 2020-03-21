@@ -59,7 +59,9 @@ function MainContainer({
         <SearchBar searchQuery={searchQuery} editSearchQuery={editSearchQuery} />
       </section>
       <main>
-        {!searchQuery ? <h2>All Books</h2> : <h2>Search Results</h2>}
+        <h2>
+          {!searchQuery ? 'All Books' : 'Search Results'}
+        </h2>
         <FilterableBookList />
       </main>
     </div>
