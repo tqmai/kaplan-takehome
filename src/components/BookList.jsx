@@ -32,9 +32,9 @@ function BookList({ books }) {
   ));
 
   return (
-    <div>
+    <section>
       {formattedBooks}
-    </div>
+    </section>
   );
 }
 
