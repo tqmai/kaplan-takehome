@@ -22,10 +22,11 @@ function CreateBookForm({ dispatch }) {
     e.preventDefault();
 
     const newBook = {
-      title: e.target.title.value,
-      author: [e.target.author.value],
-      publisher: e.target.publisher.value,
-      publishedDate: e.target.publishedDate.value,
+      // the following data has conditional statements to account for empty data fields
+      title: e.target.title.value ? e.target.title.value : 'n/a',
+      author: e.target.author.value ? [e.target.author.value] : ['n/a'],
+      publisher: e.target.publisher.value ? e.target.publisher.value : 'n/a',
+      publishedDate: e.target.publishedDate.value ? e.target.publishedDate.value : 'n/a',
     };
 
     dispatch(types.addBooks(newBook));
