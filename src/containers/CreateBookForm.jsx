@@ -37,11 +37,11 @@ function CreateBookForm({ dispatch }) {
   return (
     <div>
       <h1>Create New Book</h1>
-      <button type="button">
-        <Link to="/">
+      <Link to="/">
+        <button type="button">
           Back
-        </Link>
-      </button>
+        </button>
+      </Link>
       <form onSubmit={handleSubmit}>
         <label>
           Title:
