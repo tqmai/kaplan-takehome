@@ -46,15 +46,19 @@ function MainContainer({
 
   return (
     <div>
-      <h1>Books</h1>
-      <button type="button">
-        <Link to="/create">
-          Create New Book
-        </Link>
-      </button>
-      <SearchBar searchQuery={searchQuery} editSearchQuery={editSearchQuery} />
-      {!searchQuery ? <h2>All Books</h2> : <h2>Search Results</h2>}
-      <FilterableBookList />
+      <header>
+        <h1>Books</h1>
+        <button type="button">
+          <Link to="/create">
+            Create New Book
+          </Link>
+        </button>
+        <SearchBar searchQuery={searchQuery} editSearchQuery={editSearchQuery} />
+      </header>
+      <main>
+        {!searchQuery ? <h2>All Books</h2> : <h2>Search Results</h2>}
+        <FilterableBookList />
+      </main>
     </div>
   );
 }
