@@ -35,10 +35,11 @@ function booksReducer(state = initialState, action) {
       // logic to parse through payload before adding the data to state
       const formattedBooks = action.payload.items.map(({ volumeInfo }) => {
         const formattedBook = {
-          title: volumeInfo.title, // string
-          author: volumeInfo.authors, // array
+          // the following data has conditional statements to account for empty data fields
+          title: volumeInfo.title ? volumeInfo.title : 'n/a', // string
+          author: Array.isArray(volumeInfo.authors) ? volumeInfo.authors : ['n/a'], // array
           publisher: volumeInfo.publisher ? volumeInfo.publisher : 'n/a', // string - if no publisher, return n/a
-          publishedDate: volumeInfo.publishedDate, // string
+          publishedDate: volumeInfo.publishedDate ? volumeInfo.publishedDate : 'n/a', // string
           id: nextId,
         };
 
