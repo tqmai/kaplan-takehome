@@ -59,7 +59,7 @@ function MainContainer({
         <SearchBar searchQuery={searchQuery} editSearchQuery={editSearchQuery} />
       </section>
       <main>
-        <h2>
+        <h2 className="main__title">
           {!searchQuery ? 'All Books' : 'Search Results'}
         </h2>
         <FilterableBookList />
