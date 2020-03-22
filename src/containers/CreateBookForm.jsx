@@ -15,6 +15,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import '../stylesheets/CreateBookForm.scss';
 import * as types from '../actions/actionCreators';
 
 function CreateBookForm({ dispatch }) {
@@ -35,13 +36,15 @@ function CreateBookForm({ dispatch }) {
   };
 
   return (
-    <div>
-      <h1>Create New Book</h1>
-      <Link to="/">
-        <button type="button">
-          Back
-        </button>
-      </Link>
+    <div className="app">
+      <header className="header">
+        <h1>Create New Book</h1>
+        <Link to="/">
+          <button type="button" className="header__backButton">
+            Back
+          </button>
+        </Link>
+      </header>
       <form onSubmit={handleSubmit}>
         <label>
           Title:

@@ -1,0 +1,17 @@
+.app {
+  margin: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__backButton {
+  background-color: #303F9F;
+  color: #F5F5F5;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+}
