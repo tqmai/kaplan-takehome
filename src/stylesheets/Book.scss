@@ -1,4 +1,18 @@
 .book {
   border-style: solid;
-  border-color: black;
+  border-color: #EEEEEE;
+  padding: 5px 15px;
+  background-color: white;
+  border-radius: 5px;
+  border-width: thin;
+  border-left-color: #FF9800;
+  border-left-width: 5px;
+}
+
+.book__title {
+  color: #303F9F;
+}
+
+.book_details {
+  color: #3F51B5;
 }

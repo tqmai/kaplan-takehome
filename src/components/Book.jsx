@@ -24,8 +24,8 @@ function Book({
 
   return (
     <section className="book">
-      <h4>{title}</h4>
-      <ul>
+      <h4 className="book__title">{title}</h4>
+      <ul className="book_details">
         <li key="author">
           Author:
           {' '}
