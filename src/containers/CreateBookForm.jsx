@@ -45,28 +45,28 @@ function CreateBookForm({ dispatch }) {
           </button>
         </Link>
       </header>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
+        <h4>Title:</h4>
         <label>
-          Title:
           <input name="title" type="text" />
         </label>
         <br />
+        <h4>Author:</h4>
         <label>
-          Author:
           <input name="author" type="text" />
         </label>
         <br />
+        <h4>Publisher:</h4>
         <label>
-          Publisher:
           <input name="publisher" type="text" />
         </label>
         <br />
+        <h4>Published Date:</h4>
         <label>
-          Published Date:
           <input name="publishedDate" type="text" />
         </label>
         <br />
-        <input type="submit" value="Submit" />
+        <input className="form__submit" type="submit" value="Submit" />
       </form>
     </div>
   );
