@@ -1,5 +1,7 @@
 Notes:
-Though the app is small, I opted to separate the functionality of the app into separate reducers to more clearly separate concerns.
+- Though the app is small, I opted to separate the functionality of the app into separate reducers to more clearly separate concerns.
+- I utilized PropTypes to add static type checking for the props of all my components.
+- Since this assignment requested specifically unit tests, I only wrote tests for the components that would need unit tests. For components that would require more comprehensive tests (e.g. integration tests, end-to-end tests), like CreateBookForm, I opted to not write those comprehensive tests, in the interest of time.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
