@@ -13,7 +13,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Book from './Book';
+import Book from '../Book';
 
 it('renders the correct book info', () => {
   const title = 'How to Write Tests';
