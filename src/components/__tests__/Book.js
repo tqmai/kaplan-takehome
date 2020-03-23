@@ -3,7 +3,7 @@
 /**
  * ************************************
  *
- * @module  Book.test.js
+ * @module  Book.js
  * @author Timothy Mai
  * @date 3/16/20
  * @description test for Book.jsx
