@@ -4,7 +4,7 @@
  *
  * @module  BookList.js
  * @author Timothy Mai
- * @date 3/16/20
+ * @date 3/21/20
  * @description test for BookList.jsx
  *
  * ************************************
